@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <title>Technical Documentation Page</title>
+</head>
+<body>
+    <div id="wrapper">
+        <nav id="navbar">
+            <header class="navbar-header">
+                <div>
+                    <a href="/" class="navbar-header-title">
+                    <span class="fab fa-react"></span> 
+                    React Documentation
+                    </a>
+                </div>
+                <div onclick="toggleMenu()" class="menu-icon-btn">
+                    <span class="fas fa-bars menu-icon"></span>   
+                </div>
+            </header>
+            <ul class="navbar-list">
+                <li><a href="#Introduction" class="nav-link" onclick="toggleMenu()">Introduction</a></li>
+                <li><a href="#Create_a_New_React_App" class="nav-link" onclick="toggleMenu()">Create a New React App</a></li>
+                <li><a href="#Hello_World" class="nav-link" onclick="toggleMenu()">Hello World</a></li>
+                <li><a href="#Introducing_JSX" class="nav-link" onclick="toggleMenu()">Introducing JSX</a></li>
+                <li><a href="#Rendering_Elements" class="nav-link" onclick="toggleMenu()">Rendering Elements</a></li>
+                <li><a href="#Components_and_Props" class="nav-link" onclick="toggleMenu()">Components and Props</a></li>
+                <li><a href="#Reference" class="nav-link" onclick="toggleMenu()">Reference</a></li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <!-- || INTRODUCTION -->
+            <section id="Introduction" class="main-section">
+                <header>Introduction</header>
+                <p>React is a Javascript library for creating user interfaces.</p>
+                <div class="content-container">
+                    <h3>Declarative</h3>
+                    <p>React makes it painless to create interactive UIs. 
+                        Design simple views for each state in your application, 
+                        and React will efficiently update and render just the right components when your data changes.</p>   
+                </div>
+                <div class="content-container">
+                    <h3>Component-Based</h3>
+                    <p>Build encapsulated components that manage their own state, 
+                        then compose them to make complex UIs.</p>
+                    <p>Since component logic is written in JavaScript instead of templates, 
+                        you can easily pass rich data through your app and keep state out of the DOM.</p>
+                </div>
+                <div class="content-container">
+                    <h3>Learn Once, Write Anywhere</h3>
+                    <p>You can develop new features in React without rewriting existing code.</p>
+                    <p>React can also render on the server using Node and power mobile apps using <a href="https://reactnative.dev/" class="underline">React Native</a>.</p>
+                </div>            
+            </section>
+            <!-- || CREATE A NEW REACT APP -->
+            <section id="Create_a_New_React_App" class="main-section">
+                <header>Create a New React App</header>
+                <p>This page describes a few popular React toolchains which help with tasks like:</p>
+                <ul>
+                    <li>Scaling to many files and components.</li>
+                    <li>Using third-party libraries from npm.</li>
+                    <li>Detecting common mistakes early.</li>
+                    <li>Live-editing CSS and JS in development.</li>
+                    <li>Optimizing the output for production.</li>
+                </ul>
+                <div class="content-container">
+                    <h3>Create React App</h3>
+                    <p>Create React App is a comfortable environment for learning React,
+                        and is the best way to start building a new single-page application in React.</p>
+                    <p>It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. 
+                        You’ll need to have Node >= 10.16 and npm >= 5.6 on your machine. To create a project, run:</p>
+                    <pre class="code-section"><code>
+npx create-react-app my-app
+<span>cd</span> my-app
+<span>npm</span> start
+                    </code></pre>
+                </div>
+                <div class="content-container">
+                    <h3>Next.js</h3>
+                    <p>Next.js is a popular and lightweight framework for static and server‑rendered applications built with React. It includes styling and routing solutions out of the box, 
+                        and assumes that you’re using Node.js as the server environment.</p>
+                    <p><a href="https://nextjs.org/learn/" class="underline">Learn Next.js</a> from its official guide.</p>
+                </div>
+                <div class="content-container">
+                    <h3>Gatsby</h3>
+                    <p>Gatsby is the best way to create static websites with React. It lets you use React components,                             but outputs pre-rendered HTML and CSS to guarantee the fastest load time.</p>
+                    <p><a href="https://www.gatsbyjs.org/docs/" class="underline">Learn Gatsby</a> from its official guide.</p>
+                </div>   
+            </section>
+            <!-- || HELLO WORLD -->
+            <section id="Hello_World" class="main-section">
+                <header>Hello World</header>
+                <p>The smallest React example looks like this:</p>
+                <pre class="code-section"><code>                    
+ReactDOM.render(
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;,
+    document.getElementById('root')
+);
+                </code></pre>
+                <p>It displays a heading saying “Hello, world!” on the page.</p>
+            </section>
+            <!-- || Introducing JSX -->
+            <section id="Introducing_JSX" class="main-section">
+                <header>Introducing JSX</header>
+                <p>Consider this variable declaration:</p>
+                <pre class="code-section"><code>
+const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;                    
+                </code></pre>
+                <p>This funny tag syntax is neither a string nor HTML.</p>
+                <p>It is called JSX,  and it is a syntax extension to JavaScript. It is recommend using it with React to describe what the UI should look like. 
+                    JSX may remind you of a template language, but it comes with the full power of JavaScript.</p>
+                <div class="content-container">
+                    <h3>Why JSX?</h3>
+                    <p>React embraces the fact that rendering logic is inherently coupled with other UI logic: 
+                        how events are handled, how the state changes over time, and how the data is prepared for display.</p>
+                    <p>Instead of artificially separating technologies by putting markup and logic in separate files,
+                        React separates concerns with loosely coupled units called “components” that contain both.</p>                    
+                </div>
+                <div class="content-container">
+                    <h3>Embedding Expressions in JSX</h3>
+                    <p>In the example below, we declare a variable called name and then use it inside JSX by wrapping it in curly braces:</p>
+                    <pre class="code-section"><code>
+const name = 'Josh Perez';
+const element = &lt;h1&gt;Hello, {name}&lt;/h1&gt;;
+                        
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+);                        
+                    </code></pre>
+                    <p>You can put any valid JavaScript expression inside the curly braces in JSX.</p>
+                </div>
+            </section>
+            <!-- || RENDERING ELEMENTS -->
+            <section id="Rendering_Elements" class="main-section">
+                <header>Rendering Elements</header>
+                <p>Elements are the smallest building blocks of React apps.</p>
+                <p>An element describes what you want to see on the screen:</p>
+                <pre class="code-section"><code>
+const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;                    
+                </code></pre>
+                <p>Unlike browser DOM elements, React elements are plain objects, and are cheap to create. 
+                    React DOM takes care of updating the DOM to match the React elements.</p>
+                <div class="content-container">
+                    <h3>Rendering an Element into the DOM</h3>
+                    <p>Let’s say there is a &lt;div&gt; somewhere in your HTML file:</p>
+                    <pre class="code-section"><code>
+&lt;div&gt; id="root">&lt;/div&gt;             
+                    </code></pre>
+                    <p>We call this a “root” DOM node because everything inside it will be managed by React DOM.</p>
+                    <p>To render a React element into a root DOM node, pass both to ReactDOM.render():</p>
+                    <pre class="code-section"><code>
+const element =  &lt;h1&gt;Hello, world&lt;/h1&gt;;
+ReactDOM.render(element, document.getElementById('root'));
+                    </code></pre>
+                    <p>It displays “Hello, world” on the page.</p>
+                </div>
+            </section>
+            <!-- || COMPONENTS AND PROPS -->
+            <section id="Components_and_Props" class="main-section">
+                <header>Components and Props</header>
+                <p>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.</p>
+                <p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.</p>
+                <div class="content-container">
+                    <h3>Function and Class Components</h3>
+                    <p>The simplest way to define a component is to write a JavaScript function:</p>
+                    <pre class="code-section"><code>
+function Welcome(props) {
+    return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+                    </code></pre>
+                    <p>This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. 
+                        We call such components “function components” because they are literally JavaScript functions.</p>
+                    
+                </div>
+                <div class="content-container">
+                    <h3>Rendering a Component</h3>
+                    <p>When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.</p>
+                    <p>For example, this code renders “Hello, Sara” on the page:</p>
+                    <pre class="code-section"><code>
+function Welcome(props) {
+    return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+                          
+const element = &lt;Welcome name="Sara" /&gt;;
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+);
+                    </code></pre>
+                    <p>Let’s recap what happens in this example:</p>
+                    <ol>
+                        <li>We call ReactDOM.render() with the &lt;Welcome name="Sara" /&gt; element.</li>
+                        <li>React calls the Welcome component with {name: 'Sara'} as the props.</li>
+                        <li>Our Welcome component returns a &lt;h1&gt;Hello, Sara&lt;/h1&gt; element as the result.</li>
+                        <li>React DOM efficiently updates the DOM to match  &lt;h1&gt;Hello, Sara&lt;/h1&gt;.</li>
+                    </ol>
+                </div>
+            </section>
+            <!-- || REFERENCE -->
+            <section id="Reference" class="main-section">
+                <header>Reference</header>
+                <p>All the documentation in this page is taken from <a href="https://reactjs.org/" class="underline">React</a></p>
+            </section>      
+        </main>
+    </div>
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <script src="https://kit.fontawesome.com/0a6fa2928b.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
